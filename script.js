@@ -81,13 +81,13 @@
     sections.forEach(section => observer.observe(section));
   }
   
-  /* ── Contact form (client-side validation) ────────────────── */
+  /* ── Contact form (client-side validation + Formspree submit) ── */
   function initContactForm() {
     const form       = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
     if (!form) return;
   
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
   
       const name    = form.querySelector('#name');
@@ -125,11 +125,37 @@
         return;
       }
   
-      // Success
-      if (successMsg) {
-        successMsg.classList.remove('hidden');
-        form.reset();
-        setTimeout(() => successMsg.classList.add('hidden'), 6000);
+      // Submit to Formspree
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+  
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+  
+        if (response.ok) {
+          if (successMsg) {
+            successMsg.classList.remove('hidden');
+            setTimeout(() => successMsg.classList.add('hidden'), 6000);
+          }
+          form.reset();
+        } else {
+          alert("Something went wrong sending your message. Please try emailing directly instead.");
+        }
+      } catch (err) {
+        alert("Something went wrong sending your message. Please try emailing directly instead.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
       }
     });
   }

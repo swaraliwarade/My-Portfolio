@@ -360,6 +360,15 @@ body {
   .contact-heading { font-size: clamp(2.5rem, 10vw, 3.5rem); }
 }
 
+/* ── Typed cursor ──────────────────────────────────────────── */
+.typed-cursor {
+  animation: blink 0.75s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* ── Reduced-motion preference ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .animate-float,
@@ -370,4 +379,5 @@ body {
   .reveal-stagger > * { animation: none; transition: none; }
   .reveal,
   .reveal-stagger > * { opacity: 1; transform: none; }
+  .typed-cursor { animation: none; opacity: 1; }
 }

@@ -37,8 +37,17 @@
     </a>
     <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-pink-100" role="list">
       <li><a href="#about" class="nav-link hover:text-white transition-colors duration-200" data-section="about">About</a></li>
+      <li><a href="#hackathons" class="nav-link hover:text-white transition-colors duration-200" data-section="hackathons">Hackathons</a></li>
       <li><a href="#projects" class="nav-link hover:text-white transition-colors duration-200" data-section="projects">Projects</a></li>
       <li><a href="#current" class="nav-link hover:text-white transition-colors duration-200" data-section="current">Current Work</a></li>
+      <li>
+        <a href="resume.pdf" download class="inline-flex items-center gap-2 text-white px-5 py-2 rounded-full text-sm font-semibold border border-white/22 hover:border-rose-light/65 hover:bg-rose/10 transition-all duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Resume
+        </a>
+      </li>
       <li>
         <a href="#contact" class="btn-primary inline-block text-white px-5 py-2 rounded-full text-sm font-semibold">
           Contact
@@ -63,9 +72,18 @@
   <div id="mobile-menu" class="md:hidden border-t border-white/10" role="navigation" aria-label="Mobile navigation">
     <ul class="px-6 py-4 space-y-1 text-sm font-medium text-pink-100" role="list">
       <li><a href="#about" class="block py-2.5 hover:text-white transition-colors duration-200">About</a></li>
+      <li><a href="#hackathons" class="block py-2.5 hover:text-white transition-colors duration-200">Hackathons</a></li>
       <li><a href="#projects" class="block py-2.5 hover:text-white transition-colors duration-200">Projects</a></li>
       <li><a href="#current" class="block py-2.5 hover:text-white transition-colors duration-200">Current Work</a></li>
       <li><a href="#contact" class="block py-2.5 text-rose-light hover:text-white transition-colors duration-200">Contact</a></li>
+      <li>
+        <a href="resume.pdf" download class="inline-flex items-center gap-2 py-2.5 text-rose-light hover:text-white transition-colors duration-200">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Download Resume
+        </a>
+      </li>
     </ul>
   </div>
 </header>
@@ -100,6 +118,12 @@
           <span class="text-white">Warade</span>
         </h1>
 
+        <div class="mt-6 flex items-center gap-2.5 text-lg sm:text-xl font-medium" aria-live="polite">
+          <span class="text-slate-400">I'm a</span>
+          <span id="typed-role" class="text-rose-light min-w-[12ch] inline-block">Full-Stack Developer</span>
+          <span id="typed-cursor" class="inline-block w-0.5 h-5 sm:h-6 bg-rose-light typed-cursor" aria-hidden="true"></span>
+        </div>
+
         <p class="mt-8 text-lg sm:text-xl text-slate-400 leading-relaxed max-w-2xl border-l-2 border-rose-light/40 pl-6">
           Second-year Computer Engineering student building AI-powered and full-stack web applications —
           from multi-agent AI platforms to hackathon-winning apps.
@@ -111,6 +135,12 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
             </svg>
+          </a>
+          <a href="resume.pdf" download class="btn-ghost inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-full">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Download Resume
           </a>
           <a href="#contact" class="btn-ghost inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-full">
             Get in Touch
@@ -149,8 +179,8 @@
             </svg>
           </div>
           <p class="section-label mb-2">Hackathons</p>
-          <p class="font-display font-bold text-xl text-ink">Top 11 · Finalist</p>
-          <p class="text-slate-500 text-sm mt-2">HackAgentAIx 2026 · CodeTheCause</p>
+          <p class="font-display font-bold text-xl text-ink">Runner-Up &amp; Finalist</p>
+          <p class="text-slate-500 text-sm mt-2">TechRush · HackAgent AIX 2026</p>
         </div>
 
         <div class="glass-card glass-card-hover gradient-border rounded-2xl p-7 relative overflow-hidden">
@@ -193,10 +223,10 @@
               modern AI APIs on the backend.
             </p>
             <p>
-              I've competed in two hackathons so far: I placed in the top 11 teams in my domain at
-              HackAgentAIx 2026 (hosted by the University of Essex, UK), and my team was a finalist out of
-              80+ teams at CodeTheCause. I'm currently deepening my full-stack skills through an ongoing
-              course at Finlatics.
+              I've competed in two major hackathons: I was the runner-up in the Full-Stack Web Development
+              domain at TechRush 2026 (top 2 among 40+ teams in-domain), and a finalist in the top 14 teams
+              out of 2000+ at HackAgent AIX 2026 (hosted by the University of Essex, UK). I'm currently
+              deepening my full-stack skills through an ongoing course at Finlatics.
             </p>
           </div>
         </div>
@@ -227,6 +257,88 @@
     </div>
   </section>
 
+  <!-- HACKATHONS -->
+  <section id="hackathons" aria-labelledby="hackathons-heading" class="relative py-28 bg-dot-grid bg-rose-xlight overflow-hidden">
+    <div class="blob blob-violet w-72 h-72 top-0 -right-20 opacity-40" aria-hidden="true"></div>
+    <div class="blob blob-rose w-64 h-64 bottom-0 -left-16 opacity-30" aria-hidden="true"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <header class="reveal mb-16">
+        <span class="section-label">Competitions</span>
+        <h2 id="hackathons-heading" class="font-display text-4xl sm:text-5xl font-bold text-ink mt-3">
+          Hackathon <span class="text-gradient-dark">Achievements</span>
+        </h2>
+        <div class="ornament-line w-48 mt-6"></div>
+      </header>
+
+      <div class="grid md:grid-cols-2 gap-8 reveal-stagger">
+
+        <!-- TechRush 2026 -->
+        <div class="glass-card glass-card-hover gradient-border rounded-2xl p-8 relative overflow-hidden">
+          <div class="absolute top-4 right-5 pointer-events-none select-none">
+            <span class="font-display text-6xl font-extrabold leading-none" style="background:linear-gradient(180deg,rgba(220,90,130,0.10),transparent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" aria-hidden="true">01</span>
+          </div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="stat-icon-ring w-11 h-11 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+              <svg class="w-5 h-5 text-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-rose uppercase tracking-widest">Runner-Up</span>
+              <p class="text-slate-500 text-xs">Full-Stack Web Development Domain</p>
+            </div>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">TechRush 2026</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            Secured runner-up position in the Full-Stack Web Development domain, finishing among the
+            <strong class="text-ink">top 2 out of 40+ teams</strong> competing in-domain.
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose/10 to-rose-light/10 border border-rose/20">
+              <svg class="w-4 h-4 text-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+              </svg>
+              <span class="text-sm font-semibold text-ink">Top 2 / 40+ teams</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HackAgent AIX 2026 -->
+        <div class="glass-card glass-card-hover gradient-border rounded-2xl p-8 relative overflow-hidden">
+          <div class="absolute top-4 right-5 pointer-events-none select-none">
+            <span class="font-display text-6xl font-extrabold leading-none" style="background:linear-gradient(180deg,rgba(220,90,130,0.10),transparent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" aria-hidden="true">02</span>
+          </div>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="stat-icon-ring w-11 h-11 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
+              <svg class="w-5 h-5 text-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-rose uppercase tracking-widest">Finalist</span>
+              <p class="text-slate-500 text-xs">University of Essex, UK</p>
+            </div>
+          </div>
+          <h3 class="font-display text-2xl font-bold text-ink mb-3">HackAgent AIX 2026</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-5">
+            Selected as a finalist in the top 14 teams out of over
+            <strong class="text-ink">2000+ participating teams</strong> at this international
+            AI-focused hackathon hosted by the University of Essex, UK.
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose/10 to-rose-light/10 border border-rose/20">
+              <svg class="w-4 h-4 text-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="text-sm font-semibold text-ink">Top 14 / 2000+ teams</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <section id="projects" aria-labelledby="projects-heading" class="relative py-28 bg-dot-grid bg-rose-xlight overflow-hidden">
     <div class="blob blob-rose w-96 h-96 -top-32 -left-32 opacity-25" aria-hidden="true"></div>
@@ -250,13 +362,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4"/>
               </svg>
             </div>
-            <span class="text-xs font-bold text-rose uppercase tracking-widest">HackAgentAIx 2026</span>
+            <span class="text-xs font-bold text-rose uppercase tracking-widest">HackAgent AIX 2026</span>
           </header>
           <h3 id="project-boardroom-title" class="font-display text-2xl font-bold text-ink mb-4">AI Startup Boardroom</h3>
           <p class="text-slate-600 text-sm leading-relaxed mb-6">
             A multi-agent AI platform simulating startup boardroom discussions with specialized AI agents,
             featuring an interactive interface for collaborative, AI-driven strategic decision-making.
-            Selected in the top 11 teams in domain at this University of Essex, UK hackathon.
+            Finalist among the top 14 teams out of 2000+ at this University of Essex, UK hackathon.
           </p>
           <footer>
             <ul class="flex flex-wrap gap-2 list-none p-0 m-0" role="list" aria-label="Technologies used">
@@ -324,7 +436,7 @@
               <li><span class="text-xs px-3 py-1.5 rounded-full border border-pink-200 text-slate-500 bg-pink-50 inline-block">Groq API</span></li>
               <li><span class="text-xs px-3 py-1.5 rounded-full border border-pink-200 text-slate-500 bg-pink-50 inline-block">Pandas</span></li>
             </ul>
-            <a href="https://adaptivelearningngo-srushti-gitbeatt16.streamlit.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-rose hover:text-rose-dark transition-colors duration-200">
+            <a href="https://adaptive-learning-NGO.streamlit.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-semibold text-rose hover:text-rose-dark transition-colors duration-200">
               View live project
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

@@ -8,6 +8,7 @@
     initScrollReveal();
     initActiveNav();
     initContactForm();
+    initTypedRole();
   });
   
   /* ── Mobile menu ──────────────────────────────────────────── */
@@ -160,6 +161,56 @@
     });
   }
   
+  /* ── Typed role animation ─────────────────────────────────── */
+  function initTypedRole() {
+    const el   = document.getElementById('typed-role');
+    if (!el) return;
+
+    const roles = [
+      'Full-Stack Developer',
+      'AI Enthusiast',
+      'Hackathon Finalist',
+      'DSA Enthusiast',
+      'PICT Student',
+    ];
+
+    const typeSpeed   = 65;   // ms per char – typing
+    const deleteSpeed = 35;   // ms per char – deleting
+    const pauseEnd    = 1800; // pause after a full word
+    const pauseStart  = 400;  // pause before typing begins
+
+    let roleIdx   = 0;
+    let charIdx   = roles[0].length; // start fully typed
+    let deleting  = false;
+    let timeoutId = null;
+
+    function tick() {
+      const current = roles[roleIdx];
+
+      if (!deleting) {
+        // ---- fully typed – pause then start deleting ----
+        charIdx = current.length;
+        timeoutId = setTimeout(() => { deleting = true; tick(); }, pauseEnd);
+        return;
+      }
+
+      // ---- deleting ----
+      if (charIdx > 0) {
+        charIdx--;
+        el.textContent = current.slice(0, charIdx);
+        timeoutId = setTimeout(tick, deleteSpeed);
+      } else {
+        // ---- finished deleting – move to next role ----
+        deleting = false;
+        roleIdx = (roleIdx + 1) % roles.length;
+        timeoutId = setTimeout(tick, pauseStart);
+      }
+    }
+
+    // Kick off the loop — word starts fully typed, then deletes
+    timeoutId = setTimeout(tick, pauseEnd);
+  }
+
   function showError(field, message) {
     field.classList.add('border-red-400', '!border-red-400');
     // Use the element whose id matches field.id + '-error'

@@ -176,39 +176,53 @@
 
     const typeSpeed   = 100;  // ms per char – typing
     const deleteSpeed = 55;   // ms per char – deleting
-    const pauseEnd    = 2200; // pause after a full word
-    const pauseStart  = 400;  // pause before typing begins
+    const pauseEnd    = 1200; // pause after a full word before deleting
+    const pauseStart  = 500;  // pause after deleting before typing next word
 
     let roleIdx   = 0;
-    let charIdx   = roles[0].length; // start fully typed
-    let deleting  = false;
+    let charIdx   = 0;
+    let phase     = 'typing'; // typing | pause | deleting | idle
     let timeoutId = null;
 
     function tick() {
       const current = roles[roleIdx];
 
-      if (!deleting) {
-        // ---- fully typed – pause then start deleting ----
-        charIdx = current.length;
-        timeoutId = setTimeout(() => { deleting = true; tick(); }, pauseEnd);
-        return;
-      }
-
-      // ---- deleting ----
-      if (charIdx > 0) {
-        charIdx--;
-        el.textContent = current.slice(0, charIdx);
-        timeoutId = setTimeout(tick, deleteSpeed);
+      if (phase === 'typing') {
+        // ---- type one character ----
+        if (charIdx < current.length) {
+          charIdx++;
+          el.textContent = current.slice(0, charIdx);
+          timeoutId = setTimeout(tick, typeSpeed);
+        } else {
+          // ---- fully typed – pause then delete ----
+          phase = 'pause';
+          timeoutId = setTimeout(tick, pauseEnd);
+        }
+      } else if (phase === 'pause') {
+        // ---- start deleting ----
+        phase = 'deleting';
+        tick();
+      } else if (phase === 'deleting') {
+        // ---- delete one character ----
+        if (charIdx > 0) {
+          charIdx--;
+          el.textContent = current.slice(0, charIdx);
+          timeoutId = setTimeout(tick, deleteSpeed);
+        } else {
+          // ---- done deleting – next role ----
+          phase = 'idle';
+          roleIdx = (roleIdx + 1) % roles.length;
+          timeoutId = setTimeout(tick, pauseStart);
+        }
       } else {
-        // ---- finished deleting – move to next role ----
-        deleting = false;
-        roleIdx = (roleIdx + 1) % roles.length;
-        timeoutId = setTimeout(tick, pauseStart);
+        // ---- idle – start typing next word ----
+        phase = 'typing';
+        tick();
       }
     }
 
-    // Kick off the loop — word starts fully typed, then deletes
-    timeoutId = setTimeout(tick, pauseEnd);
+    // Kick off the loop
+    tick();
   }
 
   function showError(field, message) {

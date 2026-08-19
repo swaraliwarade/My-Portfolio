@@ -174,7 +174,7 @@
       'PICT Student',
     ];
 
-    const typeSpeed   = 65;   // ms per char – typing
+    const typeSpeed   = 100;  // ms per char – typing
     const deleteSpeed = 35;   // ms per char – deleting
     const pauseEnd    = 1800; // pause after a full word
     const pauseStart  = 400;  // pause before typing begins
